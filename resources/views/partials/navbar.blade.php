@@ -55,7 +55,7 @@
 
             <div class="md:hidden flex items-center">
                 <button id="mobile-menu-button"
-                    class="text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 focus:outline-none transition-colors">
+                    class="text-slate-600  dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 focus:outline-none transition-colors">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />

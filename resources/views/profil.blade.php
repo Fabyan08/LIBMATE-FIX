@@ -123,7 +123,7 @@
                             <h3 class="text-xl font-semibold text-slate-800 dark:text-white">Riwayat Pemesanan Ruangan</h3>
                         </div>
 
-                        <div class="overflow-x-auto relative z-[99999999999999]">
+                        <div class="overflow-x-auto relative">
                             <table class="w-full text-left">
                                 <thead
                                     class="bg-slate-50 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider transition-colors">
@@ -242,7 +242,7 @@
                                 <div
                                     class="w-24 h-24 rounded-full border-[4px] border-white dark:border-slate-800 bg-orange-100 dark:bg-slate-700 flex items-center justify-center shadow-sm text-orange-600 dark:text-orange-500 text-lg font-extrabold transition-colors">
                                     <input type="file" name="foto" accept="image/*"
-                                        class="absolute w-full h-full opacity-0 cursor-pointer">
+                                        class="relative w-full h-full opacity-0 cursor-pointer">
                                     @if ($mahasiswa->foto)
                                         <img src="{{ asset('storage/' . $mahasiswa->foto) }}" alt="Foto Profil"
                                             class="w-full h-full object-cover rounded-full">
