@@ -12,12 +12,10 @@ class ChatbotController extends Controller
     {
         $pesan = strtolower($request->input('pesan'));
 
-        // Contoh logika sederhana: Mencari ruang tersedia
         if (str_contains($pesan, 'ruang') && str_contains($pesan, 'kosong')) {
             $jamSekarang = Carbon::now()->format('H:i:s');
             $tanggalHariIni = Carbon::now()->format('Y-m-d');
 
-            // Cari ruangan yang tidak dipinjam pada jam saat ini
             $tersedia = Ruangan::whereDoesntHave('peminjaman', function ($q) use ($jamSekarang, $tanggalHariIni) {
                 $q->where('tanggal_pinjam', $tanggalHariIni)
                     ->where('jam_mulai', '<=', $jamSekarang)

@@ -16,9 +16,14 @@ class CekAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->role === 'admin') {
+
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        if (Auth::user()->role === 'admin') {
             return $next($request);
         }
-        return redirect()->back();
+        return redirect()->route('home')->with('error', 'Anda tidak memiliki akses ke halaman admin.');
     }
 }

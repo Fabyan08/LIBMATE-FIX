@@ -94,7 +94,6 @@
                 return null;
             }
 
-            // BACA NAMA BARU
             const savedTheme = getLocalCookie('libmate_theme');
             const savedFont = getLocalCookie('libmate_font');
 
@@ -136,7 +135,6 @@
                         msgText.textContent = result.message;
                         alertBox.classList.remove('hidden');
 
-                        // SIMPAN DENGAN NAMA BARU KITA
                         if (typeof setCookie === "function") {
                             setCookie('libmate_theme', themeValue, 30);
                             setCookie('libmate_font', fontValue, 30);

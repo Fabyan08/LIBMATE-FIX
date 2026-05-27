@@ -64,7 +64,7 @@
                     <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Email
                         Universitas</label>
                     <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus
-                        placeholder="nim@student.unej.ac.id"
+                        placeholder="nim@mail.unej.ac.id"
                         class="w-full px-4 py-3 rounded-xl bg-white/50 border @error('email') border-red-500 @else border-slate-200 @enderror text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300">
 
                     @error('email')

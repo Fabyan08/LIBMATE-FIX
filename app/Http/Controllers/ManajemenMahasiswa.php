@@ -64,7 +64,7 @@ class ManajemenMahasiswa extends Controller
         return view('dashboard.manajemen-mahasiswa.edit', compact('mahasiswa'));
     }
 
-    public function update(Request $request, User $mahasiswa) // $mahasiswa di sini sebenarnya adalah instance dari model User
+    public function update(Request $request, User $mahasiswa)
     {
         $validated = $request->validate([
             'status' => 'required|in:Aktif,Suspended,Cuti,Lulus',

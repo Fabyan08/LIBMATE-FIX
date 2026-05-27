@@ -449,46 +449,59 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center gap-16">
+
                     <div class="lg:w-1/2 text-left">
                         <span
-                            class="inline-block py-1 px-3 rounded-full bg-white/20 text-white text-sm font-semibold mb-6 border border-white/50">Asisten
-                            Chat AI</span>
-                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Asisten Perpustakaan
-                            Pribadi Anda</h2>
+                            class="inline-block py-1 px-3 rounded-full bg-white/20 text-white text-sm font-semibold mb-6 border border-white/50">
+                            Pusat Informasi AI
+                        </span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                            Asisten Cerdas Siap Menjawab
+                        </h2>
                         <p class="text-white text-lg mb-8 leading-relaxed">
-                            Tidak ingin repot melihat jadwal? Tanya saja LibMate. AI generatif kami memahami bahasa
-                            sehari-hari untuk menemukan dan memesan tempat yang tepat dalam hitungan detik.
+                            Punya pertanyaan seputar fasilitas ruangan, prosedur pemesanan, atau aturan perpustakaan? Tanya
+                            langsung ke AI LibMate! Asisten virtual kami memahami bahasa sehari-hari dan siap memberikan
+                            informasi akurat kapan saja.
                         </p>
                         <ul class="space-y-4 mb-10">
-                            <li class="flex items-start gap-3 text-white"><svg class="w-6 h-6 shrink-0" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
+                            <li class="flex items-start gap-3 text-white">
+                                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7"></path>
-                                </svg><span>"Carikan ruang tenang untuk 3 orang jam 2 siang ini"</span></li>
-                            <li class="flex items-start gap-3 text-white"><svg class="w-6 h-6 shrink-0" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
+                                </svg>
+                                <span>"Bagaimana prosedur memesan ruang diskusi?"</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white">
+                                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7"></path>
-                                </svg><span>"Batalkan pesanan saya untuk Ruang 4"</span></li>
-                            <li class="flex items-start gap-3 text-white"><svg class="w-6 h-6 shrink-0" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
+                                </svg>
+                                <span>"Berapa jam batas maksimal peminjaman ruangan?"</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white">
+                                <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7"></path>
-                                </svg><span>"Lantai mana yang area belajarnya paling sepi saat ini?"</span></li>
+                                </svg>
+                                <span>"Apakah ada fasilitas AC dan proyektor di Ruang Meeting?"</span>
+                            </li>
                         </ul>
                         <a href="#"
-                            class="inline-flex items-center gap-2 text-white font-semibold hover:text-orange-200 transition-colors">Jelajahi
-                            Kemampuan AI <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="inline-flex items-center gap-2 text-white font-semibold hover:text-orange-200 transition-colors">
+                            Coba Tanya AI Sekarang
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg></a>
+                            </svg>
+                        </a>
                     </div>
 
                     <div class="lg:w-1/2 w-full max-w-md mx-auto">
                         <div
                             class="bg-white dark:bg-slate-800 rounded-2xl border border-white/50 dark:border-slate-700 shadow-2xl overflow-hidden transition-colors">
+
                             <div
-                                class="bg-white dark:bg-slate-900/50 shadow-md backdrop-blur-sm border-b dark:border-slate-700 p-4 flex items-center justify-between transition-colors">
+                                class="bg-white dark:bg-slate-900/50 shadow-sm backdrop-blur-sm border-b dark:border-slate-700 p-4 flex items-center justify-between transition-colors">
                                 <div class="flex items-center gap-3">
                                     <div class="relative">
                                         <div
@@ -505,38 +518,45 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h4 class="text-slate-500 dark:text-slate-300 font-semibold text-sm">LibMate AI
-                                        </h4>
-                                        <p class="text-slate-400 dark:text-slate-500 text-xs">Online</p>
+                                        <h4 class="text-slate-700 dark:text-slate-300 font-bold text-sm">LibMate AI</h4>
+                                        <p class="text-slate-400 dark:text-slate-500 text-xs">Asisten Informasi</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="p-4 space-y-4 h-80 overflow-y-auto bg-white dark:bg-slate-800 transition-colors">
+                            <div
+                                class="p-4 space-y-4 h-[350px] overflow-y-auto bg-slate-50 dark:bg-slate-800 transition-colors custom-scrollbar">
+
                                 <div class="flex justify-end">
                                     <div
-                                        class="bg-orange-500 shadow-sm text-white rounded-2xl rounded-tr-sm px-4 py-2 text-sm max-w-[80%]">
-                                        Saya butuh ruang untuk kerja kelompok (4 orang) sekitar jam 3 sore ini.
+                                        class="bg-orange-500 shadow-sm text-white rounded-2xl rounded-tr-sm px-4 py-2.5 text-sm max-w-[85%]">
+                                        Gimana cara pesan ruangan di libmate?
                                     </div>
                                 </div>
 
                                 <div class="flex justify-start">
                                     <div
-                                        class="bg-slate-100 dark:bg-slate-700 border dark:border-slate-600 text-slate-800 dark:text-slate-200 rounded-2xl rounded-tl-sm px-4 py-3 text-sm max-w-[85%] transition-colors">
-                                        <p class="mb-2 text-slate-600 dark:text-slate-300">Saya menemukan 2 pilihan
-                                            sempurna untuk kelompok Anda pada 15:00:</p>
+                                        class="bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 shadow-sm text-slate-800 dark:text-slate-200 rounded-2xl rounded-tl-sm p-4 text-sm max-w-[90%] transition-colors">
+                                        <p class="mb-3">Tentu! Cara pesan ruangan di LibMate adalah sebagai berikut:</p>
+
+                                        <ol class="list-decimal ml-4 space-y-1.5 mb-4 text-slate-700 dark:text-slate-300">
+                                            <li><strong>Login</strong> ke akun mahasiswa UNEJ.</li>
+                                            <li><strong>Lihat katalog ruang</strong> untuk memilih ruangan.</li>
+                                            <li><strong>Isi formulir booking</strong> sesuai kebutuhan.</li>
+                                            <li>Status pesanan akan menjadi <strong>Pending</strong> dan diverifikasi admin.
+                                            </li>
+                                        </ol>
+
                                         <div
-                                            class="bg-slate-800 dark:bg-slate-900 rounded-lg p-3 border border-slate-700 mb-2">
-                                            <div class="flex justify-between items-center mb-1">
-                                                <span class="font-bold text-white">Kursi Ruang B</span>
-                                                <span
-                                                    class="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded">Tersedia</span>
-                                            </div>
-                                            <p class="text-xs text-slate-300">Lantai 2 • Kapasitas 6</p>
+                                            class="bg-orange-50 dark:bg-slate-800/50 p-3 rounded-lg border border-orange-100 dark:border-slate-600">
+                                            <p class="font-semibold text-xs text-orange-600 dark:text-orange-400 mb-1">
+                                                Catatan penting:</p>
+                                            <ul
+                                                class="list-disc ml-4 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+                                                <li>Pemesanan hanya antara 08:00–16:00 WIB.</li>
+                                                <li>Maksimal 3 jam per sesi.</li>
+                                            </ul>
                                         </div>
-                                        <button
-                                            class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-1.5 rounded-lg text-xs transition-colors">Pesan
-                                            Ruang B</button>
                                     </div>
                                 </div>
                             </div>
@@ -544,10 +564,10 @@
                             <div
                                 class="p-3 bg-white dark:bg-slate-900 shadow-md border-t dark:border-slate-700 transition-colors">
                                 <div class="relative">
-                                    <input type="text" placeholder="Ketik pesan..."
-                                        class="w-full bg-slate-100 dark:bg-slate-800 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 rounded-full py-3 pl-4 pr-12 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors" />
-                                    <button
-                                        class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center text-white hover:bg-orange-500 transition-colors">
+                                    <input type="text" placeholder="Tanya sesuatu..." disabled
+                                        class="w-full bg-slate-100 dark:bg-slate-800 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 rounded-full py-3 pl-4 pr-12 border border-slate-200 dark:border-slate-700 focus:outline-none transition-colors cursor-not-allowed" />
+                                    <button disabled
+                                        class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center text-white cursor-not-allowed">
                                         <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -560,268 +580,10 @@
                     </div>
                 </div>
             </div>
+
+
         </section>
 
-        {{-- <section class="py-24 bg-slate-50 dark:bg-slate-900/50 transition-colors">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-10">
-                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">Riwayat Pemesanan
-                        Ruangan</h2>
-                    <p class="text-slate-500 dark:text-slate-400 transition-colors">Cari dan filter data pemesanan ruang
-                        diskusi Anda</p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                    <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm transition-colors">
-                        <h3 class="font-semibold text-slate-900 dark:text-white mb-4">Filter</h3>
-
-                        <div class="mb-6">
-                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Lantai</p>
-                            <div class="space-y-2">
-                                <label class="flex items-center gap-2 cursor-pointer text-slate-700 dark:text-slate-300">
-                                    <input type="checkbox" class="accent-orange-500" />
-                                    <span class="text-sm">Lantai 1</span>
-                                </label>
-                                <label class="flex items-center gap-2 cursor-pointer text-slate-700 dark:text-slate-300">
-                                    <input type="checkbox" class="accent-orange-500" />
-                                    <span class="text-sm">Lantai 2</span>
-                                </label>
-                                <label class="flex items-center gap-2 cursor-pointer text-slate-700 dark:text-slate-300">
-                                    <input type="checkbox" class="accent-orange-500" />
-                                    <span class="text-sm">Lantai 3</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p class="text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Status</p>
-                            <div class="space-y-2">
-                                <label class="flex items-center gap-2 cursor-pointer text-slate-700 dark:text-slate-300">
-                                    <input type="checkbox" class="accent-green-500" />
-                                    <span class="text-sm">Selesai</span>
-                                </label>
-                                <label class="flex items-center gap-2 cursor-pointer text-slate-700 dark:text-slate-300">
-                                    <input type="checkbox" class="accent-yellow-500" />
-                                    <span class="text-sm">Berlangsung</span>
-                                </label>
-                                <label class="flex items-center gap-2 cursor-pointer text-slate-700 dark:text-slate-300">
-                                    <input type="checkbox" class="accent-red-500" />
-                                    <span class="text-sm">Dibatalkan</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-3">
-                        <div class="mb-6 flex flex-col md:flex-row gap-4">
-                            <input type="text" id="search-history" placeholder="Cari nama ruang atau tanggal..."
-                                class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-orange-500 focus:outline-none transition-colors" />
-                            <button
-                                class="px-6 py-3 bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-700 transition">Cari</button>
-                        </div>
-
-                        <div
-                            class="overflow-x-auto bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm transition-colors">
-                            <table id="history-table" class="min-w-full text-sm text-left">
-                                <thead
-                                    class="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 uppercase text-xs transition-colors">
-                                    <tr>
-                                        <th class="px-6 py-3">Nama Ruang</th>
-                                        <th class="px-6 py-3">Tanggal</th>
-                                        <th class="px-6 py-3">Waktu</th>
-                                        <th class="px-6 py-3">Kapasitas</th>
-                                        <th class="px-6 py-3">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y dark:divide-slate-700 text-slate-800 dark:text-slate-300">
-                                    <tr
-                                        class="odd:bg-white dark:odd:bg-slate-800 even:bg-slate-50 dark:even:bg-slate-700/50 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors">
-                                        <td class="px-6 py-4 font-medium dark:text-white">Kursi A-1</td>
-                                        <td class="px-6 py-4">12 Maret 2026</td>
-                                        <td class="px-6 py-4">13:00 - 15:00</td>
-                                        <td class="px-6 py-4">4 Orang</td>
-                                        <td class="px-6 py-4 text-green-600 dark:text-green-400 font-semibold">Selesai</td>
-                                    </tr>
-                                    <tr
-                                        class="odd:bg-white dark:odd:bg-slate-800 even:bg-slate-50 dark:even:bg-slate-700/50 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors">
-                                        <td class="px-6 py-4 font-medium dark:text-white">Kursi A-2</td>
-                                        <td class="px-6 py-4">15 Maret 2026</td>
-                                        <td class="px-6 py-4">15:00 - 17:00</td>
-                                        <td class="px-6 py-4">6 Orang</td>
-                                        <td class="px-6 py-4 text-yellow-600 dark:text-yellow-400 font-semibold">
-                                            Berlangsung</td>
-                                    </tr>
-                                    <tr
-                                        class="odd:bg-white dark:odd:bg-slate-800 even:bg-slate-50 dark:even:bg-slate-700/50 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors">
-                                        <td class="px-6 py-4 font-medium dark:text-white">Kursi B-2</td>
-                                        <td class="px-6 py-4">18 Maret 2026</td>
-                                        <td class="px-6 py-4">10:00 - 12:00</td>
-                                        <td class="px-6 py-4">3 Orang</td>
-                                        <td class="px-6 py-4 text-red-500 dark:text-red-400 font-semibold">Dibatalkan</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 bg-slate-50 dark:bg-slate-900/50 transition-colors" id="booking-management">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-10">
-                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">Manajemen
-                        Pemesanan Ruangan</h2>
-                    <p class="text-slate-500 dark:text-slate-400 mb-6 transition-colors">Kelola jadwal, tambah pemesanan,
-                        dan pantau ketersediaan ruang.</p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        <div
-                            class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-4 transition-colors">
-                            <div class="p-3 bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded-xl">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-                                    </path>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Total Pemesanan</p>
-                                <p class="text-2xl font-bold text-slate-900 dark:text-white" id="stat-total-booking">0</p>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-4 transition-colors">
-                            <div
-                                class="p-3 bg-orange-50 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 rounded-xl">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Pemesanan Hari Ini</p>
-                                <p class="text-2xl font-bold text-slate-900 dark:text-white" id="stat-today-booking">0</p>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-4 transition-colors">
-                            <div class="p-3 bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-400 rounded-xl"><svg
-                                    class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-                                    </path>
-                                </svg></div>
-                            <div>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Total Kapasitas</p>
-                                <p class="text-2xl font-bold text-slate-900 dark:text-white" id="stat-total-people">0</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm h-fit transition-colors">
-                        <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-lg" id="form-title">Form Pemesanan
-                            Baru</h3>
-                        <form id="booking-form" class="space-y-4">
-                            <input type="hidden" id="edit-id" value="" />
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">ID Booking
-                                    (Otomatis)</label>
-                                <input type="text" id="input-book-id" readonly
-                                    class="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-slate-500 dark:text-slate-400 cursor-not-allowed focus:outline-none text-sm font-bold transition-colors" />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Nama
-                                    Mahasiswa</label>
-                                <input type="text" id="input-name" placeholder="Nama Lengkap"
-                                    class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-orange-500 focus:outline-none transition text-sm" />
-                                <span class="text-xs text-red-500 hidden mt-1" id="err-name">Nama wajib diisi!</span>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Pilih
-                                    Ruangan</label>
-                                <select id="input-room"
-                                    class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-orange-500 focus:outline-none transition text-sm">
-                                    <option value="">-- Pilih Ruang --</option>
-                                    <option value="Lantai 1 - Ruang Diskusi Terbuka">Lantai 1 - Terbuka</option>
-                                    <option value="Lantai 2 - Ruang Tenang (A)">Lantai 2 - Tenang (A)</option>
-                                    <option value="Lantai 2 - Ruang Tenang (B)">Lantai 2 - Tenang (B)</option>
-                                    <option value="Lantai 3 - Ruang Multimedia">Lantai 3 - Multimedia</option>
-                                </select>
-                                <span class="text-xs text-red-500 hidden mt-1" id="err-room">Silakan pilih
-                                    ruangan!</span>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label
-                                        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Kapasitas</label>
-                                    <input type="number" id="input-capacity" min="1" max="10"
-                                        class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-orange-500 focus:outline-none transition text-sm" />
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Tanggal</label>
-                                    <input type="date" id="input-date"
-                                        class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-orange-500 focus:outline-none transition text-sm" />
-                                </div>
-                            </div>
-                            <div class="pt-2 flex gap-2">
-                                <button type="submit" id="btn-submit"
-                                    class="flex-1 bg-orange-600 text-white py-2.5 rounded-lg font-semibold hover:bg-orange-700 transition shadow-sm text-sm">Simpan
-                                    Pesanan</button>
-                                <button type="button" id="btn-cancel-edit"
-                                    class="hidden px-4 bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-white py-2.5 rounded-lg font-semibold hover:bg-slate-300 dark:hover:bg-slate-500 transition text-sm">Batal</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="lg:col-span-2">
-                        <div
-                            class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm transition-colors">
-                            <div class="flex flex-col md:flex-row gap-4 mb-6">
-                                <div class="flex-1 relative">
-                                    <input type="text" id="search-data" placeholder="Cari ID atau Nama Pemesan..."
-                                        class="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-orange-500 focus:outline-none transition text-sm" />
-                                    <svg class="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                    </svg>
-                                </div>
-                                <select id="filter-data"
-                                    class="md:w-64 px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-orange-500 focus:outline-none transition text-sm">
-                                    <option value="All">Semua Lantai</option>
-                                    <option value="Lantai 1">Lantai 1</option>
-                                    <option value="Lantai 2">Lantai 2</option>
-                                    <option value="Lantai 3">Lantai 3</option>
-                                </select>
-                            </div>
-
-                            <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
-                                <table class="min-w-full text-sm text-left">
-                                    <thead
-                                        class="bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-200 font-semibold border-b border-slate-200 dark:border-slate-700 transition-colors">
-                                        <tr>
-                                            <th class="px-4 py-3">ID</th>
-                                            <th class="px-4 py-3">Nama & Ruang</th>
-                                            <th class="px-4 py-3">Jadwal & Kapasitas</th>
-                                            <th class="px-4 py-3 text-center">Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="table-body"
-                                        class="divide-y divide-slate-100 dark:divide-slate-700 text-slate-800 dark:text-slate-300">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
         <section
             class="py-12 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -930,9 +692,7 @@
                     <div class="relative z-10">
                         <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Mulai Pesan Sekarang Yuk!</h2>
                         <div class="flex flex-col justify-center items-center gap-4">
-                            <p class="mt-6 text-sm text-white/90">Membutuhkan Kartu Tanda Mahasiswa (KTM) Universitas
-                                Jember.</p>
-                            <a href="#"
+                            <a href="/ruangan"
                                 class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-orange-600 font-bold text-lg hover:bg-slate-50 shadow-xl transition-all hover:-translate-y-1">
                                 Pesan Sekarang
                             </a>
@@ -1018,7 +778,6 @@
             const message = "{{ session('welcome_toast') ?? 'Selamat Datang di LibMate UNEJ! 👋' }}";
             const toaster = document.createElement('div');
 
-            // Toaster dengan dukungan class dark mode
             toaster.className = "fixed bottom-10 left-1/2 -translate-x-1/2 z-[100] pointer-events-auto " +
                 "bg-slate-900/90 dark:bg-white/90 backdrop-blur-md text-white dark:text-slate-900 px-6 py-3 rounded-full " +
                 "shadow-2xl flex items-center gap-3 transform transition-all duration-700 " +

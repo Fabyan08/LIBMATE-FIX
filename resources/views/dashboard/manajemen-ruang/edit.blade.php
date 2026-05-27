@@ -230,7 +230,7 @@
                 .then(data => {
                     if (data.success) {
                         input.value = '';
-                        // 1. Tambahkan ke dalam List Modal
+                       
                         let containerModal = document.getElementById('container-daftar-fasilitas');
                         let barisModal = `
                             <div id="baris-fasilitas-${data.data.id}" class="flex justify-between items-center p-3 hover:bg-slate-50">
@@ -239,7 +239,7 @@
                             </div>`;
                         containerModal.insertAdjacentHTML('afterbegin', barisModal);
 
-                        // 2. Tambahkan langsung ke dalam Form Edit (Tanpa Reload!)
+                       
                         let containerForm = document.getElementById('checkbox-container');
                         let checkboxBaru = `
                             <label id="check-fasilitas-${data.data.id}" class="flex items-center p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors group">
@@ -248,7 +248,7 @@
                             </label>`;
                         containerForm.insertAdjacentHTML('beforeend', checkboxBaru);
 
-                        lucide.createIcons(); // Refresh ikon
+                        lucide.createIcons();
                     } else {
                         alert('Gagal menambahkan fasilitas.');
                     }
@@ -268,9 +268,9 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        // Hapus dari Modal
+                       
                         document.getElementById(`baris-fasilitas-${id}`).remove();
-                        // Hapus dari Form Edit
+                       
                         let checkboxElem = document.getElementById(`check-fasilitas-${id}`);
                         if (checkboxElem) checkboxElem.remove();
                     }

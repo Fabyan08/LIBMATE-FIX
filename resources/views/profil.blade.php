@@ -123,7 +123,7 @@
                             <h3 class="text-xl font-semibold text-slate-800 dark:text-white">Riwayat Pemesanan Ruangan</h3>
                         </div>
 
-                        <div class="overflow-x-auto">
+                        <div class="overflow-x-auto relative z-[99999999999999]">
                             <table class="w-full text-left">
                                 <thead
                                     class="bg-slate-50 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider transition-colors">

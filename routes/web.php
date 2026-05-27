@@ -34,19 +34,17 @@ Route::post('/reset-kunjungan', function () {
 })->name('kunjungan.reset');
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 Route::get('/tentang/ruangan/{lantai}/{kapasitas}', [TentangController::class, 'filterRuangan']);
-Route::get('/kontak', function () {
-    return view('kontak');
-})->name('kontak');
+Route::get('/kontak', function () { return view('kontak'); })->name('kontak');
 Route::get('/ruangan', [KatalogRuanganController::class, 'index'])->name('ruangan.index');
 Route::post('/kontak', [KontakController::class, 'store'])->name('kontak.store');
-
-
 Route::get('/ruangan/{lantai}/{id}', [KatalogRuanganController::class, 'show'])->name('ruangan.show');
+Route::get('/preferensi', [PreferensiController::class, 'index'])->name('preferensi.index');
+Route::post('/api/preferensi/simpan', [PreferensiController::class, 'store'])->name('preferensi.store');
+Route::post('/chat', [ChatbotController::class, 'chat']);
 
 
 Route::get('/hitung/{a}/{b}', fn($a, $b) => $a + $b)->name('hitung');
 Route::middleware(['auth', 'cek.admin'])->group(function () {
-    // Manajemen ruang
     Route::get('/manajemen-ruang', [ManajemenRuang::class, 'index'])->name('manajemen-ruang');
     Route::get('/manajemen-ruang/create', [ManajemenRuang::class, 'create'])->name('manajemen-ruang.create');
     Route::post('/manajemen-ruang', [ManajemenRuang::class, 'store'])->name('manajemen-ruang.store');
@@ -78,14 +76,8 @@ Route::middleware(['auth', 'cek.admin'])->group(function () {
     Route::get('/manajemen-kontak', [ManajemenKontakController::class, 'index'])->name('manajemen-kontak');
 });
 
-Route::get('/preferensi', [PreferensiController::class, 'index'])->name('preferensi.index');
-Route::post('/api/preferensi/simpan', [PreferensiController::class, 'store'])->name('preferensi.store');
-Route::post('/chat', [ChatbotController::class, 'chat']);
 
 Route::middleware('auth')->group(function () {
-    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
     Route::put('/profil/update', [ProfilController::class, 'update'])->name('profil.update');
