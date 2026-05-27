@@ -3,7 +3,7 @@
 @section('title', 'Dashboard Manajemen Ruang')
 
 @section('content')
-    <main class="flex-1 h-full overflow-y-auto pt-16 lg:pt-0">
+    <main class="flex-1 h-full overflow-y-auto md:pt-16 lg:pt-0">
         <div class="p-6 md:p-8 lg:p-10 max-w-7xl mx-auto">
             <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
                 <div>

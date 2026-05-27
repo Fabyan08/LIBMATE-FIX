@@ -59,7 +59,7 @@
     </div>
 </footer>
 
-<div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
+{{-- <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
     <div id="floating-chat"
         class="mb-4 w-[320px] md:w-[350px] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden transform scale-95 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right">
 
@@ -162,4 +162,4 @@
     </div>
 
 
-</div>
+</div> --}}

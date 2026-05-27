@@ -80,14 +80,15 @@
                 class="block px-3 py-2 rounded-md text-base font-medium @if (request()->is('kontak')) text-orange-600 bg-orange-50 dark:bg-slate-800 @else text-slate-600 dark:text-slate-300 hover:text-orange-600 hover:bg-orange-50 dark:hover:bg-slate-800 @endif transition-colors">
                 Kontak
             </a>
+            <a href="/ruangan"
+                class="block px-3 py-2 rounded-md text-base font-medium @if (request()->is('ruangan')) text-orange-600 bg-orange-50 dark:bg-slate-800 @else text-slate-600 dark:text-slate-300 hover:text-orange-600 hover:bg-orange-50 dark:hover:bg-slate-800 @endif transition-colors">
+                Katalog Ruangan
+            </a>
             <a href="/preferensi"
                 class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:text-orange-600 hover:bg-orange-50 dark:hover:bg-slate-800 transition-colors">
                 Preferensi
             </a>
-            <a href="{{ route('dashboard') }}"
-                class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:text-orange-600 hover:bg-orange-50 dark:hover:bg-slate-800 transition-colors">
-                Dashboard
-            </a>
+
 
             <button id="theme-toggle-mobile"
                 class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-600 dark:text-slate-300 hover:text-orange-600 hover:bg-orange-50 dark:hover:bg-slate-800 transition-colors flex items-center justify-between">
@@ -100,10 +101,24 @@
             </button>
 
             <div class="pt-4 px-3">
-                <a href="{{ route('dashboard') }}"
-                    class="block w-full text-center px-5 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white text-base font-semibold shadow-md shadow-orange-500/20">
-                    Masuk
-                </a>
+                @if (auth()->check())
+                    @if (auth()->user()->role === 'admin')
+                        <a href="{{ route('dashboard') }}"
+                            class="block w-full text-center px-5 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white text-base font-semibold shadow-md shadow-orange-500/20">
+                            Dashboard
+                        </a>
+                    @else
+                        <a href="{{ route('profil') }}"
+                            class="block w-full text-center px-5 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white text-base font-semibold shadow-md shadow-orange-500/20">
+                            Profil
+                        </a>
+                    @endif
+                @else
+                    <a href="{{ route('dashboard') }}"
+                        class="block w-full text-center px-5 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white text-base font-semibold shadow-md shadow-orange-500/20">
+                        Masuk
+                    </a>
+                @endif
             </div>
         </div>
     </div>
@@ -137,15 +152,20 @@
 
     document.addEventListener('DOMContentLoaded', function() {
 
-        const btn = document.getElementById('mobile-menu-button');
-        const menu = document.getElementById('mobile-menu');
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
 
-        if (btn && menu) {
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-        }
-
+            if (btn) {
+                btn.onclick = function(e) {
+                    e.stopPropagation();
+                    if (menu) {
+                        menu.classList.toggle('hidden');
+                        console.log('Menu di-klik!'); // Cek di console apakah tulisan ini muncul
+                    }
+                };
+            }
+        });
 
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

@@ -42,46 +42,60 @@
 
 <body
     class="bg-slate-50 text-slate-800 font-sans antialiased overflow-hidden selection:bg-orange-200 selection:text-orange-600">
-    <div class="flex h-screen w-full">
 
-        <!-- Sidebar Kiri -->
+    <div id="sidebarOverlay"
+        class="fixed inset-0 bg-slate-900/40 z-30 hidden lg:hidden transition-opacity duration-300"></div>
+
+    <div class="flex h-screen w-full relative">
+
         @include('partials.dashboard.sidebar')
 
-        {{-- Session Flash --}}
-        <main class="flex-1 h-full overflow-y-auto pt-16 lg:pt-0">
-            @if (session('success'))
-                <div id="flash-message"
-                    class="fixed top-5 right-5 z-[100] flex items-center p-4 mb-4 text-emerald-800 border-t-4 border-emerald-500 bg-emerald-50 shadow-lg rounded-2xl animate-bounce-in"
-                    role="alert">
-                    <i data-lucide="check-circle" class="w-5 h-5 mr-3"></i>
-                    <div class="text-sm font-medium">
-                        {{ session('success') }}
-                    </div>
-                    <button type="button" onclick="document.getElementById('flash-message').remove()"
-                        class="ml-auto -mx-1.5 -my-1.5 bg-emerald-50 text-emerald-500 rounded-lg focus:ring-2 focus:ring-emerald-400 p-1.5 hover:bg-emerald-200 inline-flex h-8 w-8 transition-all">
-                        <i data-lucide="x" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            @endif
+        <div class="flex-1 flex flex-col h-full overflow-hidden w-full">
 
-            @if (session('error'))
-                <div id="flash-message"
-                    class="fixed top-5 right-5 z-[100] flex items-center p-4 mb-4 text-red-800 border-t-4 border-red-500 bg-red-50 shadow-lg rounded-2xl animate-bounce-in"
-                    role="alert">
-                    <i data-lucide="alert-circle" class="w-5 h-5 mr-3"></i>
-                    <div class="text-sm font-medium">
-                        {{ session('error') }}
-                    </div>
-                    <button type="button" onclick="document.getElementById('flash-message').remove()"
-                        class="ml-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex h-8 w-8 transition-all">
-                        <i data-lucide="x" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            @endif
-            @yield('content')
-        </main>
+            <header
+                class="h-16 lg:hidden bg-white border-b border-slate-100 flex items-center justify-between px-6 z-20 w-full shrink-0">
+                <button id="mobileMenuBtn" class="p-2 text-slate-600 hover:bg-slate-50 rounded-xl transition">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+                <img src="{{ asset('Libmate.png') }}" width="100" alt="Logo" />
+                <button id="mobileRightMenuBtn" class="p-2 text-slate-600 hover:bg-slate-50 rounded-xl transition">
+                    <i data-lucide="user" class="w-6 h-6"></i>
+                </button>
+            </header>
 
-        <!-- Sidebar Kanan (Profil) -->
+            <main class="flex-1 h-full overflow-y-auto p-6 lg:p-10 relative">
+                {{-- Session Flash Success --}}
+                @if (session('success'))
+                    <div id="flash-message"
+                        class="fixed top-5 right-5 z-[100] flex items-center p-4 mb-4 text-emerald-800 border-t-4 border-emerald-500 bg-emerald-50 shadow-lg rounded-2xl"
+                        role="alert">
+                        <i data-lucide="check-circle" class="w-5 h-5 mr-3"></i>
+                        <div class="text-sm font-medium">{{ session('success') }}</div>
+                        <button type="button" onclick="document.getElementById('flash-message').remove()"
+                            class="ml-auto -mx-1.5 -my-1.5 text-emerald-500 rounded-lg p-1.5 hover:bg-emerald-200 inline-flex">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                @endif
+
+                {{-- Session Flash Error --}}
+                @if (session('error'))
+                    <div id="flash-message"
+                        class="fixed top-5 right-5 z-[100] flex items-center p-4 mb-4 text-red-800 border-t-4 border-red-500 bg-red-50 shadow-lg rounded-2xl"
+                        role="alert">
+                        <i data-lucide="alert-circle" class="w-5 h-5 mr-3"></i>
+                        <div class="text-sm font-medium">{{ session('error') }}</div>
+                        <button type="button" onclick="document.getElementById('flash-message').remove()"
+                            class="ml-auto -mx-1.5 -my-1.5 text-red-500 rounded-lg p-1.5 hover:bg-red-200 inline-flex">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                @endif
+
+                @yield('content')
+            </main>
+        </div>
+
         @include('partials.dashboard.right-sidebar')
 
     </div>

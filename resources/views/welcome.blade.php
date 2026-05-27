@@ -6,12 +6,12 @@
     <main style="background-image: url('{{ asset('unej.png') }}')"
         class="md:bg-[length:200%] bg-[length:1000%] bg-top bg-no-repeat md:min-h-screen dark:bg-slate-900 transition-colors duration-300">
 
-        <div class="maskot fixed -bottom-20 -left-12 w-96 z-40">
+        <div class="maskot fixed -bottom-20 -left-12 w-60 md:w-96 z-40">
             <img src="{{ asset('maskot.png') }}" alt="" class="animate-bounce drop-shadow-2xl">
         </div>
 
         <div id="weather-mascot-btn"
-            class="maskot fixed -bottom-20 -left-12 w-96 z-50 cursor-pointer group hover:-translate-y-2 transition-transform duration-300">
+            class="maskot fixed -bottom-20 -left-12 w-60 md:w-96 z-50 cursor-pointer group hover:-translate-y-2 transition-transform duration-300">
             <div
                 class="absolute -top-20 left-32 bg-white dark:bg-slate-800 px-4 py-2 rounded-2xl shadow-xl border border-orange-200 dark:border-orange-500/30 text-sm font-bold text-orange-600 dark:text-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                 Cek Cuaca Jember! 🌤️

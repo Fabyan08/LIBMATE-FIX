@@ -142,7 +142,9 @@
                                                 {{ $booking->ruangan->nama_ruang ?? 'Ruang' }}
                                             </td>
                                             <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">
-                                                {{ \Carbon\Carbon::parse($booking->tanggal_pinjam)->format('d M Y') }}
+                                                {{ \Carbon\Carbon::parse($booking->tanggal_pinjam)->format('d M Y') }} <br>
+                                                <b> {{ \Carbon\Carbon::parse($booking->jam_mulai)->format('H:i') }} -
+                                                    {{ \Carbon\Carbon::parse($booking->jam_selesai)->format('H:i') }}</b>
                                             </td>
                                             <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">
                                                 {{ $booking->keperluan }}
@@ -282,12 +284,24 @@
                                 <input type="email" name="email" value="{{ old('email', $mahasiswa->email ?? '') }}"
                                     class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-900/50 focus:bg-white dark:focus:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm text-slate-800 dark:text-slate-200 transition-colors">
                             </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-semibold text-slate-500 dark:text-slate-500 mb-1.5">Password
+                                    Baru</label>
+                                <input type="password" name="password" placeholder="Kosongkan jika tidak ingin mengubah"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-900/50 focus:bg-white dark:focus:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm text-slate-800 dark:text-slate-200 transition-colors">
+                            </div>
 
                             <div class="pt-4">
                                 <button type="submit"
                                     class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-orange-500/30 dark:shadow-none transform hover:-translate-y-0.5">
                                     Simpan Perubahan
                                 </button>
+                                {{-- tutup --}}
+                                <a href=""
+                                    class="block text-center text-orange-500 hover:text-orange-600 font-medium mt-2">
+                                    Batal
+                                </a>
                             </div>
                         </form>
                     </div>

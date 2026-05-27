@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -36,12 +37,16 @@ class ProfilController extends Controller
             'fakultas' => 'nullable|string|max:100',
             'email'    => 'required|email|unique:users,email,' . $user->id,
             'foto'     => 'nullable|image|mimes:jpeg,png,jpg,webp|max:4096',
+            'password' => 'nullable|string|min:8',
         ]);
 
         $user->name     = $request->name;
         $user->nim      = $request->nim;
         $user->fakultas = $request->fakultas;
         $user->email    = $request->email;
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
+        }
 
         if ($request->hasFile('foto')) {
             if ($user->foto && Storage::exists('public/' . $user->foto)) {
