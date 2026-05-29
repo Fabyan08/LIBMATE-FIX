@@ -165,14 +165,14 @@
             const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
 
             let debounceTimer;
-
+            // Event listener untuk input pencarian dengan debounce
             searchInput.addEventListener('input', function() {
                 const query = this.value;
 
 
                 loadingIcon.classList.remove('hidden');
 
-
+                // Pasang debounce pada input pencarian untuk mengurangi jumlah permintaan AJAX saat pengguna mengetik cepat
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(async () => {
                     try {

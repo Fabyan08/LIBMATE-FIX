@@ -27,6 +27,30 @@
                     </div>
                 </div>
             </div>
+        @elseif(auth()->user()->status === 'Lulus')
+            <div class="max-w-7xl mx-auto px-6 pt-40">
+
+                <div
+                    class="mb-8 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/50 p-5 rounded-2xl flex items-start shadow-sm transition-colors">
+                    <div class="flex-shrink-0 bg-green-100 dark:bg-green-900/50 p-2 rounded-full">
+                        <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-sm font-bold text-green-800 dark:text-green-400 tracking-wide uppercase">Akses
+                            Pemesanan
+                            Tidak Bisa Digunakan</h3>
+                        <p class="text-sm text-green-600 dark:text-green-300 mt-1 leading-relaxed">
+                            Akun Anda saat ini sudah lulus. Silakan hubungi admin perpustakaan untuk informasi lebih
+                            lanjut.
+                        </p>
+                    </div>
+                </div>
+            </div>
         @else
             <section
                 class="bg-gradient-to-b pt-32 from-orange-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 min-h-screen py-12 transition-colors duration-300">
@@ -153,11 +177,13 @@
                                             </path>
                                         </svg>
                                         Anda harus <a href="{{ route('login') }}"
-                                            class="text-orange-500 font-bold hover:underline">masuk</a> untuk mengajukan booking
+                                            class="text-orange-500 font-bold hover:underline">masuk</a> untuk mengajukan
+                                        booking
                                         ruang perpustakaan.
                                     </div>
                                 @else
-                                    <form action="{{ route('booking.store', $ruangan->id) }}" method="POST" class="space-y-5">
+                                    <form action="{{ route('booking.store', $ruangan->id) }}" method="POST"
+                                        class="space-y-5">
                                         @csrf
 
                                         <div>
@@ -343,6 +369,56 @@
     @endauth
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // tanggal merah
+            const inputTanggal = document.getElementById('tanggal_pinjam');
+
+            // Daftar Hari Libur Nasional & Cuti Bersama Tahun 2026 (Pastikan format YYYY-MM-DD)
+            const tanggalMerah2026 = [
+                '2026-01-01', // Tahun Baru Masehi
+                '2026-02-17', // Isra Mikraj
+                '2026-02-19', // Tahun Baru Imlek
+                '2026-03-20', // Hari Raya Nyepi
+                '2026-03-21', // Idul Fitri
+                '2026-03-22', // Idul Fitri
+                '2026-04-03', // Wafat Yesus Kristus
+                '2026-05-01', // Hari Buruh
+                '2026-05-14', // Kenaikan Yesus Kristus
+                '2026-05-28', // Idul Adha
+                '2026-05-31', // Hari Raya Waisak
+                '2026-06-01', // Hari Lahir Pancasila
+                '2026-06-16', // Tahun Baru Islam
+                '2026-08-17', // Hari Kemerdekaan RI
+                '2026-08-26', // Maulid Nabi Muhammad SAW
+                '2026-12-25' // Hari Raya Natal
+            ];
+
+            function validateDate() {
+                if (!inputTanggal.value) return;
+
+                const selectedDate = new Date(inputTanggal.value);
+                const dayOfWeek = selectedDate.getDay(); // 0 = Minggu, 6 = Sabtu
+                const dateString = inputTanggal.value; // Nilai asli dari <input type="date"> selalu YYYY-MM-DD
+
+                // 1. Validasi Akhir Pekan (Sabtu & Minggu)
+                if (dayOfWeek === 0 || dayOfWeek === 6) {
+                    alert(
+                        'Maaf, pemesanan ruang diskusi perpustakaan tidak tersedia di akhir pekan (Sabtu & Minggu).');
+                    inputTanggal.value = ''; // Kosongkan input
+                    return;
+                }
+
+                // 2. Validasi Tanggal Merah
+                if (tanggalMerah2026.includes(dateString)) {
+                    alert(
+                        'Maaf, perpustakaan tutup pada tanggal merah/hari libur nasional. Silakan pilih tanggal lain.');
+                    inputTanggal.value = ''; // Kosongkan input
+                    return;
+                }
+            }
+
+            inputTanggal.addEventListener('change', validateDate);
+
+
             const inputMulai = document.getElementById('jam_mulai');
             const inputSelesai = document.getElementById('jam_selesai');
 
@@ -361,7 +437,7 @@
                 let valMulai = inputMulai.value;
                 let valSelesai = inputSelesai.value;
 
-                
+
                 if (valMulai) {
                     let hMulai = parseInt(valMulai.split(':')[0]);
                     if (hMulai >= 1 && hMulai <= 4) {
@@ -380,10 +456,10 @@
                 valMulai = inputMulai.value;
                 valSelesai = inputSelesai.value;
 
-                
-                const minWaktu = 8 * 60; 
-                const maxWaktu = 16 * 60; 
-                const maxDurasi = 3 * 60; 
+
+                const minWaktu = 8 * 60;
+                const maxWaktu = 16 * 60;
+                const maxDurasi = 3 * 60;
 
                 if (valMulai) {
                     let minMulai = timeToMinutes(valMulai);
@@ -403,7 +479,7 @@
                     }
                 }
 
-                
+
                 valMulai = inputMulai.value;
                 valSelesai = inputSelesai.value;
 

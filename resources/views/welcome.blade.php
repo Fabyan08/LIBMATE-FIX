@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard | LibMate Universitas Jember')
+@section('title', 'Homepage')
 
 @section('content')
     <main style="background-image: url('{{ asset('unej.png') }}')"
         class="md:bg-[length:200%] bg-[length:1000%] bg-top bg-no-repeat md:min-h-screen dark:bg-slate-900 transition-colors duration-300">
-
+        {{-- maskot & popup cuaca --}}
         <div class="maskot fixed -bottom-20 -left-12 w-60 md:w-96 z-40">
             <img src="{{ asset('maskot.png') }}" alt="" class="animate-bounce drop-shadow-2xl">
         </div>
@@ -746,7 +746,7 @@
                     uiLoading.classList.remove('hidden');
                     uiContent.classList.add('hidden');
                     uiError.classList.add('hidden');
-
+                    // Mengambil data cuaca wilayah Jember dari API eksternal (wttr.in) berformat JSON
                     const response = await fetch('https://wttr.in/Jember?format=j1');
                     if (!response.ok) throw new Error('Gagal mengambil data dari API');
 
@@ -773,6 +773,8 @@
 @endsection
 
 @push('scripts')
+    {{-- IIFE (Immediately Invoked Function Expression) untuk menampilkan notifikasi Toast secara dinamis saat halaman pertama
+    kali dimuat --}}
     <script>
         (function() {
             const message = "{{ session('welcome_toast') ?? 'Selamat Datang di LibMate UNEJ! 👋' }}";

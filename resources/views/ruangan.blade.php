@@ -15,6 +15,7 @@
             </p>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {{-- pengecekan status sesuai kondisi user (mahasiswa) --}}
             @if (Auth::check() == false)
                 <div
                     class="mb-10 bg-white dark:bg-slate-800 p-4 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col md:flex-row gap-4 justify-between items-center transition-colors">
@@ -93,7 +94,7 @@
                                 <div class="mt-auto">
                                     <a href="{{ route('login') }}"
                                         class="block w-full text-center bg-[#8B4513] hover:bg-[#6b340e] text-white font-bold py-3 rounded-xl transition-colors shadow-md">
-                                       Login untuk Detail Ruangan
+                                        Login untuk Detail Ruangan
                                     </a>
                                 </div>
                             </div>
@@ -149,6 +150,27 @@
                                 tidak dapat melakukan pemesanan ruang baru. Silakan hubungi admin perpustakaan untuk
                                 memulihkan
                                 status Anda.
+                            </p>
+                        </div>
+                    </div>
+                @elseif(auth()->user()->status === 'Lulus')
+                    <div
+                        class="mb-8 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/50 p-5 rounded-2xl flex items-start shadow-sm transition-colors">
+                        <div class="flex-shrink-0 bg-green-100 dark:bg-green-900/50 p-2 rounded-full">
+                            <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-sm font-bold text-green-800 dark:text-green-400 tracking-wide uppercase">Akses
+                                Pemesanan
+                                Tidak Bisa Digunakan</h3>
+                            <p class="text-sm text-green-600 dark:text-green-300 mt-1 leading-relaxed">
+                                Akun Anda saat ini sudah lulus. Silakan hubungi admin perpustakaan untuk informasi lebih
+                                lanjut.
                             </p>
                         </div>
                     </div>
@@ -277,7 +299,7 @@
         const paginationWrapper = document.getElementById('pagination-wrapper');
 
         let debounceTimer;
-
+        // Fungsi untuk mengambil data secara AJAX dan memperbarui konten grid serta pagination
         function fetchData(url) {
             gridContainer.style.opacity = '0.5';
             fetch(url, {
@@ -308,6 +330,7 @@
         searchForm.addEventListener('submit', function(e) {
             e.preventDefault();
         });
+        // Pasang debounce pada input pencarian untuk mengurangi jumlah permintaan AJAX saat pengguna mengetik cepat
         searchInput.addEventListener('input', function() {
             clearTimeout(debounceTimer);
             debounceTimer = setTimeout(() => {
@@ -321,6 +344,7 @@
                 fetchData(url.toString());
             }, 500);
         });
+        // Pasang listener untuk tombol reset pencarian agar mengembalikan ke tampilan awal tanpa filter
         document.addEventListener('click', function(e) {
             if (e.target && e.target.id === 'btn-reset-search') {
                 e.preventDefault();

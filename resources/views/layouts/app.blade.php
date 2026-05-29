@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'LibMate') }}</title>
+    <title>@yield('title') - LibMate</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+    {{-- Fungsi untuk mengambil cookie dengan aman --}}
     <script>
         function getSafeCookie(name) {
             let nameEQ = name + "=";
@@ -23,7 +23,7 @@
         }
 
         let theme = getSafeCookie('libmate_theme') || 'system';
-
+        // Terapkan tema berdasarkan cookie atau preferensi sistem
         if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -42,6 +42,7 @@
     </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="{{ asset('icon.png') }}" type="image/x-icon" />
+    {{-- Script untuk menginisialisasi chatbase --}}
     <script>
         (function() {
             if (!window.chatbase || window.chatbase("getState") !== "initialized") {

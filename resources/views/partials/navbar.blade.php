@@ -125,6 +125,7 @@
 </nav>
 
 <script>
+    // Fungsi untuk mengelola cookie tema (simpan, ambil, hapus)
     function setCookie(name, value, days) {
         let expires = "";
         if (days) {
@@ -134,7 +135,7 @@
         }
         document.cookie = name + "=" + (value || "") + expires + "; path=/";
     }
-
+    // Fungsi untuk mengambil nilai cookie berdasarkan nama
     function getCookie(name) {
         let nameEQ = name + "=";
         let ca = document.cookie.split(';');
@@ -145,7 +146,7 @@
         }
         return null;
     }
-
+    // Fungsi untuk menghapus cookie dengan mengatur tanggal kedaluwarsa ke masa lalu
     function deleteCookie(name) {
         document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     }
@@ -161,12 +162,12 @@
                     e.stopPropagation();
                     if (menu) {
                         menu.classList.toggle('hidden');
-                        console.log('Menu di-klik!'); // Cek di console apakah tulisan ini muncul
+                        console.log('Menu di-klik!'); // Debugging
                     }
                 };
             }
         });
-
+        // Inisialisasi elemen tombol toggle tema dan ikon yang akan ditampilkan berdasarkan tema saat ini
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
         const themeToggleBtn = document.getElementById('theme-toggle');

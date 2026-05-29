@@ -101,7 +101,7 @@
             if (savedFont) fontSelect.value = savedFont;
 
             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
+            // Pasang event listener pada form untuk menangani submit preferensi secara AJAX
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
 
@@ -130,7 +130,7 @@
                     if (!response.ok) throw new Error('Gagal menghubungi server.');
 
                     const result = await response.json();
-
+                    // Jika penyimpanan berhasil, tampilkan notifikasi dan perbarui tampilan sesuai preferensi yang dipilih
                     if (result.success) {
                         msgText.textContent = result.message;
                         alertBox.classList.remove('hidden');

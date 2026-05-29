@@ -161,28 +161,28 @@
 
 @push('scripts')
     <script>
-        
+        // Fungsi untuk membuka modal dan mengisi detail pesan berdasarkan data atribut pada tombol yang diklik
         function openModal(button) {
-            
+
             const nama = button.getAttribute('data-nama');
             const email = button.getAttribute('data-email');
             const subjek = button.getAttribute('data-subjek');
             const pesan = button.getAttribute('data-pesan');
 
-            
+
             document.getElementById('detail-nama').textContent = nama;
             document.getElementById('detail-email').textContent = email;
             document.getElementById('detail-subjek').textContent = subjek;
             document.getElementById('detail-pesan').textContent = pesan;
 
-            
+
             const modal = document.getElementById('modal-detail');
             const overlay = document.getElementById('modal-overlay');
             const content = document.getElementById('modal-content');
 
             modal.classList.remove('hidden');
 
-            
+
             void modal.offsetWidth;
 
             overlay.classList.remove('opacity-0');
@@ -192,7 +192,7 @@
             content.classList.add('opacity-100', 'scale-100');
         }
 
-        
+
         function closeModal() {
             const modal = document.getElementById('modal-detail');
             const overlay = document.getElementById('modal-overlay');
@@ -204,12 +204,12 @@
             content.classList.remove('opacity-100', 'scale-100');
             content.classList.add('opacity-0', 'scale-95');
 
-            
+
             setTimeout(() => {
                 modal.classList.add('hidden');
             }, 300);
         }
-
+        // Script untuk menangani pencarian langsung (live search) dengan AJAX saat pengguna mengetik di input pencarian
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('search-input');
             const tableBody = document.getElementById('table-body');
@@ -228,13 +228,13 @@
                     clearTimeout(debounceTimer);
                     debounceTimer = setTimeout(async () => {
                         try {
-                            
+
                             const response = await fetch(
                                 `{{ route('manajemen-kontak') }}?search=${encodeURIComponent(query)}`, {
                                     method: 'GET',
                                     headers: {
-                                        'X-Requested-With': 'XMLHttpRequest', 
-                                        'X-CSRF-TOKEN': csrfToken, 
+                                        'X-Requested-With': 'XMLHttpRequest',
+                                        'X-CSRF-TOKEN': csrfToken,
                                         'Accept': 'text/html'
                                     }
                                 });

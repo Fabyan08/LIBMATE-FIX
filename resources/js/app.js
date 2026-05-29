@@ -9,9 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const btn = document.getElementById("mobile-menu-button");
     const menu = document.getElementById("mobile-menu");
 
-    btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-    });
+    if (btn && menu) {
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    }
 });
 // Script Dashboard
 if (typeof lucide !== "undefined") {

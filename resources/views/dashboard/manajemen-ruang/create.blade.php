@@ -20,7 +20,8 @@
             </div>
 
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
-                <form action="{{ route('manajemen-ruang.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+                <form action="{{ route('manajemen-ruang.store') }}" method="POST" enctype="multipart/form-data"
+                    class="space-y-6">
                     @csrf
 
                     <div>
@@ -58,7 +59,6 @@
                                 <option value="Ruang Diskusi">Ruang Diskusi</option>
                                 <option value="Ruang Meeting">Ruang Meeting</option>
                                 <option value="Ruang Tenang">Ruang Tenang</option>
-                                <option value="Fasilitas Digital">Fasilitas Digital</option>
                             </select>
                         </div>
 
@@ -76,14 +76,14 @@
                         </div>
                     </div>
 
-                    <div class="pt-4 border-t border-slate-100">
+                    <div class="pt-4 border-t border-slate-100 relative">
                         <div class="flex justify-between items-center mb-4">
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700">Fasilitas Ruangan</label>
                                 <p class="text-xs text-slate-500 mt-0.5">Pilih fasilitas yang tersedia di ruangan ini.</p>
                             </div>
 
-                            <button type="button" onclick="toggleModal('modal-fasilitas')"
+                            <button type="button" onclick="toggleFasilitasModal('modal-fasilitas')"
                                 class="flex items-center gap-1.5 px-3 py-1.5 bg-orange-50 text-orange-600 hover:bg-orange-100 rounded-lg text-xs font-bold transition-colors">
                                 <i data-lucide="settings-2" class="w-3.5 h-3.5"></i>
                                 Kelola Master Fasilitas
@@ -118,7 +118,7 @@
     <div id="modal-fasilitas" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
         <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity opacity-0" id="modal-overlay"
-            onclick="toggleModal('modal-fasilitas')"></div>
+            onclick="toggleFasilitasModal('modal-fasilitas')"></div>
 
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
             <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
@@ -128,7 +128,7 @@
                     <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                         <div class="flex justify-between items-center mb-5">
                             <h3 class="text-lg font-bold text-slate-800" id="modal-title">Kelola Master Fasilitas</h3>
-                            <button type="button" onclick="toggleModal('modal-fasilitas')"
+                            <button type="button" onclick="toggleFasilitasModal('modal-fasilitas')"
                                 class="text-slate-400 hover:text-slate-600 bg-slate-50 hover:bg-slate-100 p-1.5 rounded-lg transition-colors">
                                 <i data-lucide="x" class="w-5 h-5"></i>
                             </button>
@@ -175,20 +175,25 @@
     </div>
 
     <script>
-        function toggleModal(modalID) {
+        // Fungsi untuk membuka dan menutup modal fasilitas
+        function toggleFasilitasModal(modalID) {
             const modal = document.getElementById(modalID);
-            const overlay = document.getElementById('modal-overlay');
-            const panel = document.getElementById('modal-panel');
+
+            const overlay = modal.querySelector('#modal-overlay');
+            const panel = modal.querySelector('#modal-panel');
+
+            if (!overlay || !panel) {
+                console.error("Overlay atau panel tidak ditemukan!");
+                return;
+            }
 
             if (modal.classList.contains('hidden')) {
-
                 modal.classList.remove('hidden');
                 setTimeout(() => {
                     overlay.classList.remove('opacity-0');
                     panel.classList.remove('opacity-0', 'translate-y-4', 'sm:scale-95');
                 }, 10);
             } else {
-
                 overlay.classList.add('opacity-0');
                 panel.classList.add('opacity-0', 'translate-y-4', 'sm:scale-95');
                 setTimeout(() => {
@@ -196,7 +201,7 @@
                 }, 300);
             }
         }
-
+        // Fungsi untuk menambahkan fasilitas baru melalui AJAX
         function tambahFasilitas() {
             let input = document.getElementById('input_nama_fasilitas');
             let namaFasilitas = input.value;
@@ -206,7 +211,7 @@
                 alert('Nama fasilitas tidak boleh kosong!');
                 return;
             }
-
+            // Kirim permintaan AJAX untuk menambahkan fasilitas baru
             fetch('{{ route('api.fasilitas.store') }}', {
                     method: 'POST',
                     headers: {
@@ -240,7 +245,7 @@
                 .catch(error => console.error('Error:', error));
         }
 
-
+// fungsi untuk menghapus fasilitas melalui AJAX
         function hapusFasilitas(id) {
             if (!confirm('Yakin ingin menghapus fasilitas ini?')) return;
 

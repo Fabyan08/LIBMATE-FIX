@@ -74,9 +74,6 @@
                                 <option value="Ruang Tenang"
                                     {{ old('kategori', $ruangan->kategori) == 'Ruang Tenang' ? 'selected' : '' }}>Ruang
                                     Tenang</option>
-                                <option value="Fasilitas Digital"
-                                    {{ old('kategori', $ruangan->kategori) == 'Fasilitas Digital' ? 'selected' : '' }}>
-                                    Fasilitas Digital</option>
                             </select>
                         </div>
 
@@ -103,7 +100,7 @@
                                 <p class="text-xs text-slate-500 mt-0.5">Pilih fasilitas yang tersedia di ruangan ini.</p>
                             </div>
 
-                            <button type="button" onclick="toggleModal('modal-fasilitas')"
+                            <button type="button" onclick="toggleFasilitasModal('modal-fasilitas')"
                                 class="flex items-center gap-1.5 px-3 py-1.5 bg-orange-50 text-orange-600 hover:bg-orange-100 rounded-lg text-xs font-bold transition-colors">
                                 <i data-lucide="settings-2" class="w-3.5 h-3.5"></i>
                                 Kelola Master Fasilitas
@@ -143,7 +140,7 @@
     <div id="modal-fasilitas" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
         <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity opacity-0" id="modal-overlay"
-            onclick="toggleModal('modal-fasilitas')"></div>
+            onclick="toggleFasilitasModal('modal-fasilitas')"></div>
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
             <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
                 <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
@@ -151,7 +148,7 @@
                     <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                         <div class="flex justify-between items-center mb-5">
                             <h3 class="text-lg font-bold text-slate-800" id="modal-title">Kelola Master Fasilitas</h3>
-                            <button type="button" onclick="toggleModal('modal-fasilitas')"
+                            <button type="button" onclick="toggleFasilitasModal('modal-fasilitas')"
                                 class="text-slate-400 hover:text-slate-600 bg-slate-50 hover:bg-slate-100 p-1.5 rounded-lg transition-colors"><i
                                     data-lucide="x" class="w-5 h-5"></i></button>
                         </div>
@@ -186,8 +183,8 @@
     </div>
 
     <script>
-        function toggleModal(modalID) {
-            /* ... Kode Toggle Modal Sama ... */
+        // fungsi untuk membuka dan menutup modal fasilitas
+        function toggleFasilitasModal(modalID) {
             const modal = document.getElementById(modalID);
             const overlay = document.getElementById('modal-overlay');
             const panel = document.getElementById('modal-panel');
@@ -205,7 +202,7 @@
                 }, 300);
             }
         }
-
+        // fungsi untuk menambahkan fasilitas baru melalui AJAX
         function tambahFasilitas() {
             let input = document.getElementById('input_nama_fasilitas');
             let namaFasilitas = input.value;
@@ -215,7 +212,7 @@
                 alert('Nama fasilitas tidak boleh kosong!');
                 return;
             }
-
+            // Kirim permintaan AJAX untuk menambahkan fasilitas baru
             fetch('{{ route('api.fasilitas.store') }}', {
                     method: 'POST',
                     headers: {
@@ -230,7 +227,7 @@
                 .then(data => {
                     if (data.success) {
                         input.value = '';
-                       
+
                         let containerModal = document.getElementById('container-daftar-fasilitas');
                         let barisModal = `
                             <div id="baris-fasilitas-${data.data.id}" class="flex justify-between items-center p-3 hover:bg-slate-50">
@@ -239,7 +236,7 @@
                             </div>`;
                         containerModal.insertAdjacentHTML('afterbegin', barisModal);
 
-                       
+
                         let containerForm = document.getElementById('checkbox-container');
                         let checkboxBaru = `
                             <label id="check-fasilitas-${data.data.id}" class="flex items-center p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors group">
@@ -254,7 +251,7 @@
                     }
                 }).catch(error => console.error('Error:', error));
         }
-
+// fungsi untuk menghapus fasilitas melalui AJAX
         function hapusFasilitas(id) {
             if (!confirm('Yakin ingin menghapus fasilitas ini?')) return;
             let token = document.querySelector('input[name="_token"]').value;
@@ -268,9 +265,9 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                       
+
                         document.getElementById(`baris-fasilitas-${id}`).remove();
-                       
+
                         let checkboxElem = document.getElementById(`check-fasilitas-${id}`);
                         if (checkboxElem) checkboxElem.remove();
                     }
